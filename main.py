@@ -10,10 +10,21 @@ def add(x, y):
 
 
 def multiply(x, y):
-    total = 0
-    for a in range(y):
-        total = add(x, total)
-    return total
+    mult = 0
+    if x < 0 and y > 0:
+        for i in range(y):
+            mult = add(mult, x)
+    elif x > 0 and y < 0:
+        for i in range(x):
+            mult = add(mult, y)
+    elif x < 0 and y < 0:
+        for i in range(-y):
+            mult = add(mult, -x)
+    else:
+        for i in range(x):
+            mult = add(mult, y)
+
+    return mult
 
    
 
